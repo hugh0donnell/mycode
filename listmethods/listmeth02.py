@@ -7,7 +7,16 @@ protoa.append("dns") # this line will add "dns" to the end of our list
 print(proto)
 proto2 = [ 22, 80, 443, 53 ] # a list of common ports
 proto.extend(proto2) # pass proto2 as an argument to the extend method
+print("This one used 'extend'")
 print(proto)
 protoa.append(proto2) # pass proto2 as an argument to the append method
+print("This one used 'append'")
 print(protoa)
 
+proto.pop()
+print("proto  popped")
+print(proto)
+
+protoa.pop()
+print("protoa popped")
+print(protoa)
