@@ -10,8 +10,8 @@ def get_non_negative_int(prompt):
             print("Sorry, I didn't understand that.")
             continue
 
-        if value < 0:
-            print("Sorry, your response must not be negative.")
+        if value < 0 or value > 100:
+            print("Sorry, your response must be an integer between 0 and 100")
             continue
         else:
             break
