@@ -12,22 +12,21 @@ critcal thinking for the next iteration...
 import getopt
 import os
 import sys
-
-argumentList = sys.argv[1:]
-options      = "v"
-long_options = ["version"]
-version      = '1.3'
-
 def main():
+  argumentList = sys.argv[1:]
+  options      = "v"
+  long_options = ["version"]
+  version      = '1.4'
   try:
     arguments, values = getopt.getopt(argumentList, options, long_options)
     for currentArgument, currentValue in arguments:
       if currentArgument in ("-v", "--version"):
         print ("pushit " + version)
+        break
   except:
     pass
 
-if sys.argv[1] != "--version":
+  if len(sys.argv) == 1:
     commit_message    = input('Commit Comment: ')
     #working_directory = 'cd ~/mycode'
     working_directory = '/home/student/mycode'
@@ -39,7 +38,7 @@ if sys.argv[1] != "--version":
     os.system(git_add)
     os.system(git_commit)
     os.system(git_push)
-
 if __name__ == "__main__":
     main()
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
